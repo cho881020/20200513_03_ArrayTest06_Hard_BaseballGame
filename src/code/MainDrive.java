@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainDrive {
 
 	public static void main(String[] args) {
-		
+		Scanner scan = new Scanner(System.in);
 		// 야구게임 - 이다연
 		
 		int[] questionArr = new int[3];
@@ -15,6 +15,10 @@ public class MainDrive {
 //			Math.random()
 			
 			while(true) {
+				System.out.println("세자리 숫자를 입력 : ");
+				int inputNum = scan.nextInt();
+				
+				
 				int randomNum = (int) (Math.random()*9+1);
 				
 				boolean isDuplOk = true;
@@ -36,9 +40,8 @@ public class MainDrive {
 			System.out.println(num);
 		}
 		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("세자리 숫자를 입력 : ");
-		int inputNum = scan.nextInt();
+		
+		
 		
 		answerArr[0] = inputNum/100;
 		answerArr[1] = inputNum/10%10;
@@ -61,6 +64,12 @@ public class MainDrive {
 			}
 		}
 		System.out.println(strikeCount+"S"+ballCount+"B 입니다.");
+		
+		if(strikeCount ==3) {
+			System.out.println("정답입니다");
+			System.out.println(inputCount+"회 만에 맞췄습니다.");
+			System.out.println("게임을종료합니다.");
+		}
 	}
 	
 }
