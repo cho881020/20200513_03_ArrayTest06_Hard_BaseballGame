@@ -1,11 +1,15 @@
 package code;
 
+import java.util.Scanner;
+
 public class MainDrive {
 
 	public static void main(String[] args) {
 		
 		// 야구게임 - 구현정 
 		int[] questionArr = new int[3];
+		int[] answerArr = new int[3];
+		
 		for(int i=0;i<questionArr.length;i++) {
 			while(true) {				
 				int randomNum = (int)(Math.random()*9+1);
@@ -26,6 +30,17 @@ public class MainDrive {
 		for(int num : questionArr) {
 			System.out.print(num+" ");
 		}
+		
+		System.out.println();
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("세자리 숫자를 입력하세요: ");
+		int inputNum = scan.nextInt();
+		
+		answerArr[0] = inputNum/100;
+		answerArr[1] = (inputNum/10)%10;
+		// ex) 951 >> 95.1 >> 5
+		answerArr[2] = inputNum%10;
 	}
 	
 }
