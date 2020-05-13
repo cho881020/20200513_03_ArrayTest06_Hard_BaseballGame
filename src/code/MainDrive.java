@@ -39,9 +39,14 @@ public class MainDrive {
 		
 		Scanner scan = new Scanner(System.in);
 		
+		int inputCount = 0;
+		
+		
 		while(true) {
 			System.out.print("세자리 숫자 입력 : ");
 			int inputNum = scan.nextInt();
+			
+			inputCount++;
 			
 			answer[0] = inputNum/100;
 			answer[1] = (inputNum/10)%10;
@@ -66,6 +71,7 @@ public class MainDrive {
 			System.out.println(strike+"S"+ball+"B");
 			if(strike ==3) {
 				System.out.println("정답입니다");
+				System.out.println(inputCount+"회만에 맞췄습니다");
 				System.out.println("게임을 종료합니다");
 				break; //종료시켜버렷
 			}
