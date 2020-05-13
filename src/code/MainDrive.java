@@ -9,8 +9,6 @@ public class MainDrive {
 		// 야구게임 - 구현정 
 		int[] questionArr = new int[3];
 		int[] answerArr = new int[3];
-		int strikeCount = 0;
-		int ballCount = 0;
 		
 		for(int i=0;i<questionArr.length;i++) {
 			while(true) {				
@@ -40,6 +38,10 @@ public class MainDrive {
 		
 		while(true) {			
 			System.out.print("세자리 숫자를 입력하세요: ");
+			int strikeCount = 0;
+			int ballCount = 0;
+			// strike, count 갯수를 계속해서  reset시키기 위해서 while문 안에 strike&ball 선언.
+			
 			int inputNum = scan.nextInt();
 			inputCount++;
 			answerArr[0] = inputNum/100;
@@ -59,6 +61,7 @@ public class MainDrive {
 			}
 			System.out.println(strikeCount+"S "+ballCount+"B");
 			if(strikeCount == 3) {
+				System.out.println(inputCount +"회 플레이 하셨습니다.");
 				System.out.println("정답입니다.");
 				System.out.println("게임을 종료합니다.");
 				break;
