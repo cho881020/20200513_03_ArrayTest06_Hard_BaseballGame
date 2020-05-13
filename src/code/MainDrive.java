@@ -47,6 +47,26 @@ public class MainDrive {
 		answerArr[1] = (inputNum / 10) % 10; // 가운데 자리수를 얻으려면 192 => 10으로 나누고 19.2 => 나머지 를 구한다.
 		answerArr[2] = inputNum % 10;
 		
+		int strikeCount =0;
+		int ballCount =0;
+		
+		for( int i=0; i<answerArr.length; i++) {
+			
+			for (int j=0; j<questionArr.length; j++) {
+				
+				if(answerArr[i] == questionArr[j]) {
+					if(i==j) {
+						strikeCount++;
+					}
+					else {
+						ballCount++;
+					}
+				}
+				
+			}
+		}
+		
+		System.out.println(strikeCount+"S " +ballCount+"B 입니다.");
 		
 	}
 
