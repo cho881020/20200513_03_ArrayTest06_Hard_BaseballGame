@@ -11,8 +11,22 @@ public class MainDrive {
 		for(int i=0; i < questionArr.length; i++) {
 //			Math.random()
 			
-			int randomNum = (int) (Math.random()*9+1);
-			questionArr[i] = randomNum;
+			while(true) {
+				int randomNum = (int) (Math.random()*9+1);
+				
+				boolean isDuplOk = true;
+				for (int num : questionArr) {
+					if(randomNum == num) {
+						isDuplOk = false;
+					}
+				}
+				
+				if(isDuplOk) {
+					questionArr[i] = randomNum;
+					break;
+				}
+//				중복이 되지 않아야 배열에 들어감
+			}
 		}
 		
 		for(int num:questionArr) {
