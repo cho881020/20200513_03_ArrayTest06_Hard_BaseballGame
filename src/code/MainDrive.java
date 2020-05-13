@@ -45,6 +45,23 @@ public class MainDrive {
 		answer[1] = (inputNum/10)%10;
 		answer[2] = inputNum%10;
 //		세자리 숫자 배열로 하나씩 받아내기
+		
+		int strike = 0;
+		int ball = 0;
+		
+		for(int i=0;i<answer.length;i++) {
+			for(int j=0;j<question.length;j++) {
+				if(answer[i]==question[j]) {//숫자도 같고
+					if(i==j) { //위치도 같고
+						strike++;
+					}
+					else { //위치는 다름
+						ball++;
+					}
+				}
+			}
+		}
+		System.out.println(strike+"S"+ball+"B");
 	}
 	
 }
