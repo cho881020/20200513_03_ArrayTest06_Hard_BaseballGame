@@ -1,5 +1,7 @@
 package code;
 
+import java.util.Scanner;
+
 public class MainDrive {
 
 	public static void main(String[] args) {
@@ -7,6 +9,7 @@ public class MainDrive {
 		// 야구게임 - 조경진
 		
 		int[] questionArr = new int[3];
+		int[] answerArr = new int[3];
 		
 		for (int i=0 ; i < questionArr.length ; i++) {
 			while (true) {
@@ -34,6 +37,23 @@ public class MainDrive {
 			System.out.println(num);
 		}
 		
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("세자리 숫자를 입력 : ");
+		int inputNum = scan.nextInt();
+		
+		answerArr[0] = inputNum / 100;
+		answerArr[1] = inputNum / 10 % 10;
+		answerArr[2] = inputNum % 10;
+		
+		
+		
 	}
 	
 }
+
+
+
+
+
+
