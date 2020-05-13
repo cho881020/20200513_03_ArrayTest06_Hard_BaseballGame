@@ -1,10 +1,12 @@
 package code;
 
+import java.util.Scanner;
+
 public class MainDrive {
 
 	public static void main(String[] args) {
 		
-		// 야구게임 - 황보석]
+		// 야구게임 - 황보석
 		
 		int[] questionArr = new int[3];
 		
@@ -31,6 +33,17 @@ public class MainDrive {
 		for(int num : questionArr) {
 			System.out.println(num);
 		}
+		
+		int[] answerArr = new int[3];
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("세자리 정수 숫자를 입력 : ");
+		int inputNum = scan.nextInt();
+		
+		answerArr[0] = inputNum / 100;
+		answerArr[1] = inputNum %10 %10;
+		answerArr[2] = inputNum % 10;
+		
 	}
 	
 }
