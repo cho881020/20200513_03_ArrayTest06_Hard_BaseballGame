@@ -53,9 +53,10 @@ public class MainDrive {
 			
 			for(int i=0; i < answerArr.length; i++) {
 				
-				for(int j=0; i < questionArr.length; j++) {
+				for(int j=0; j < questionArr.length; j++) {
 					
 					if(answerArr[i] == questionArr[j]) {
+						
 						if(i == j) {
 							strikeCount++;
 						}
@@ -64,14 +65,15 @@ public class MainDrive {
 						}
 					}
 				}
-				System.out.println(strikeCount + "S " + ballCount+ "B 입니다.");
 				
-				if(strikeCount == 3) {
-					System.out.println("정답입니다.");
-					System.out.println(inputCount + "회만에 맞췄습니다.");
-					System.out.println("게임을 종료합니다.");
-					break;
 				}
+			System.out.println(strikeCount + "S " + ballCount+ "B 입니다.");
+			
+			if(strikeCount == 3) {
+				System.out.println("정답입니다.");
+				System.out.println(inputCount + "회만에 맞췄습니다.");
+				System.out.println("게임을 종료합니다.");
+				break;
 			}
 		}
 		
