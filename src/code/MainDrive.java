@@ -36,10 +36,12 @@ public class MainDrive {
 		System.out.println();
 		
 		Scanner scan = new Scanner(System.in);
+		int inputCount = 0;
+		
 		while(true) {			
 			System.out.print("세자리 숫자를 입력하세요: ");
 			int inputNum = scan.nextInt();
-			
+			inputCount++;
 			answerArr[0] = inputNum/100;
 			answerArr[1] = (inputNum/10)%10;
 			answerArr[2] = inputNum%10;
