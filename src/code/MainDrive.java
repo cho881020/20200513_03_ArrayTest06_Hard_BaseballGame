@@ -9,7 +9,10 @@ public class MainDrive {
 		int[] question = new int[3];
 		
 		for(int i=0;i<question.length;i++) {
-			question[i] = 1;
+			
+			int random = (int) (Math.random()*9+1);
+			
+			question[i] = random;
 		}
 		
 		for(int num : question) {
