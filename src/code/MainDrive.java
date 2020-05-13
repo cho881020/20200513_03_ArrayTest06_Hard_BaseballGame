@@ -36,9 +36,9 @@ public class MainDrive {
 
 		}
 
-		for (int num : questionArr) {
-			System.out.println(num);
-		}
+//		for (int num : questionArr) {
+//			System.out.println(num);
+//		}
 		Scanner scan = new Scanner(System.in);
 		
 		int inputCount =0;
