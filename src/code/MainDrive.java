@@ -40,33 +40,41 @@ public class MainDrive {
 			System.out.println(num);
 		}
 		Scanner scan = new Scanner(System.in);
-		System.out.print("세자리 숫자를 입력 : ");
-		int inputNum = scan.nextInt();
 		
-		answerArr[0] = inputNum / 100;
-		answerArr[1] = (inputNum / 10) % 10; // 가운데 자리수를 얻으려면 192 => 10으로 나누고 19.2 => 나머지 를 구한다.
-		answerArr[2] = inputNum % 10;
-		
-		int strikeCount =0;
-		int ballCount =0;
-		
-		for( int i=0; i<answerArr.length; i++) {
+		while(true) {
+			System.out.print("세자리 숫자를 입력 : ");
+			int inputNum = scan.nextInt();
 			
-			for (int j=0; j<questionArr.length; j++) {
+			answerArr[0] = inputNum / 100;
+			answerArr[1] = (inputNum / 10) % 10; // 가운데 자리수를 얻으려면 192 => 10으로 나누고 19.2 => 나머지 를 구한다.
+			answerArr[2] = inputNum % 10;
+			
+			int strikeCount =0;
+			int ballCount =0;
+			
+			for( int i=0; i<answerArr.length; i++) {
 				
-				if(answerArr[i] == questionArr[j]) {
-					if(i==j) {
-						strikeCount++;
+				for (int j=0; j<questionArr.length; j++) {
+					
+					if(answerArr[i] == questionArr[j]) {
+						if(i==j) {
+							strikeCount++;
+						}
+						else {
+							ballCount++;
+						}
 					}
-					else {
-						ballCount++;
-					}
+					
 				}
-				
+			}
+			System.out.println(strikeCount+"S " +ballCount+"B 입니다.");
+			if(strikeCount == 3) {
+				System.out.println("정답입니다:D");
+				System.out.println("게임을 종료합니다.");
+				break;
 			}
 		}
 		
-		System.out.println(strikeCount+"S " +ballCount+"B 입니다.");
 		
 	}
 
