@@ -41,9 +41,13 @@ public class MainDrive {
 		}
 		Scanner scan = new Scanner(System.in);
 		
+		int inputCount =0;
+		
 		while(true) {
 			System.out.print("세자리 숫자를 입력 : ");
 			int inputNum = scan.nextInt();
+			
+			inputCount++;
 			
 			answerArr[0] = inputNum / 100;
 			answerArr[1] = (inputNum / 10) % 10; // 가운데 자리수를 얻으려면 192 => 10으로 나누고 19.2 => 나머지 를 구한다.
@@ -70,7 +74,9 @@ public class MainDrive {
 			System.out.println(strikeCount+"S " +ballCount+"B 입니다.");
 			if(strikeCount == 3) {
 				System.out.println("정답입니다:D");
+				System.out.println(inputCount+"회 만에 맞췄습니다");
 				System.out.println("게임을 종료합니다.");
+				
 				break;
 			}
 		}
