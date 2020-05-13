@@ -28,36 +28,48 @@ public class MainDrive {
 			System.out.println(num);
 		}
 		Scanner scan = new Scanner(System.in);
-		System.out.print("3자리 정수를 입력하세요 : ");
-		int inputNum = scan.nextInt();
+		int inputCount=0;
+				
+		while (true) {
 
-		answerArr[0] = inputNum / 100;
-		answerArr[1] = inputNum / 10 % 10;
-		answerArr[2] = inputNum % 10;
-		
-		int strikeCount = 0;
-		int ballCount = 0;
-		
-		for (int i=0 ; i < answerArr.length ; i++) {
-			
-			for (int j=0 ; j < questionArr.length ; j++) {
-				
-				if (answerArr[i] == questionArr[j]) {
-					
-					if (i == j) {
-						strikeCount++;
+			System.out.print("3자리 정수를 입력하세요 : ");
+			int inputNum = scan.nextInt();
+			inputCount++;
+			answerArr[0] = inputNum / 100;
+			answerArr[1] = inputNum / 10 % 10;
+			answerArr[2] = inputNum % 10;
+
+			int strikeCount = 0;
+			int ballCount = 0;
+
+			for (int i = 0; i < answerArr.length; i++) {
+
+				for (int j = 0; j < questionArr.length; j++) {
+
+					if (answerArr[i] == questionArr[j]) {
+
+						if (i == j) {
+							strikeCount++;
+						} else {
+							ballCount++;
+						}
+
 					}
-					else {
-						ballCount++;
-					}
-					
+
 				}
-				
+
 			}
-			
+
+			System.out.println(strikeCount + "S " + ballCount + "B 입니다.");
+
+			if (strikeCount == 3) {
+				System.out.println("정답입니다.");
+				System.out.println(inputCount+"회만에 정답입니다.");
+				System.out.println("게임을 종료합니다.");
+				break;
+			}
 		}
-		
-		System.out.println(strikeCount+"S "+ ballCount+"B 입니다.");
+
 	}
 
 }
