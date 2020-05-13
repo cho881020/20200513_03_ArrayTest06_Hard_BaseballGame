@@ -11,7 +11,20 @@ public class MainDrive {
 //			 0<=(int) (Math.random()*9+1)<10	//랜덤넘버남겨두기	
 			 
 			 int randomNum = (int) (Math.random()*9+1);
-			 questionArr[i] =randomNum;
+			 
+			 boolean isDuplOk = true;
+			 
+			 for( int num : questionArr) {
+				 if(randomNum == num) {
+					 isDuplOk = false;
+					 break;
+				 }
+			if(isDuplOk) {
+				questionArr[i] =randomNum;
+				break;
+			}
+			 }
+			 
 			 
 		 }
 		
