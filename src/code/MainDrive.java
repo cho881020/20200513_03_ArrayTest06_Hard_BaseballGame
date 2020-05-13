@@ -8,7 +8,11 @@ public class MainDrive {
 		
 		int[] questionArr = new int[3];
 		 for (int i = 0; i< questionArr.length; i++) {
-			 questionArr[i] =1;
+//			 0<=(int) (Math.random()*9+1)<10	//랜덤넘버남겨두기	
+			 
+			 int randomNum = (int) (Math.random()*9+1);
+			 questionArr[i] =randomNum;
+			 
 		 }
 		
 		 for ( int num :questionArr ) {
